@@ -2,7 +2,7 @@ import { Outlet, Link, useLocation } from "react-router";
 import {
   LayoutDashboard,
   FolderKanban,
-  BookOpen,
+  // BookOpen,
   User,
   Wrench,
   Mail,
@@ -33,18 +33,20 @@ import profilePhoto from "@/assets/profile-photo.jpg";
 const nav = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Projects", url: "/projects", icon: FolderKanban },
-  { title: "Articles", url: "/articles", icon: BookOpen },
+  // { title: "Articles", url: "/articles", icon: BookOpen },
   { title: "About", url: "/about", icon: User },
   { title: "Skills", url: "/skills", icon: Wrench },
   { title: "Contact", url: "/contact", icon: Mail },
 ];
 
 function Brand() {
+
   return (
-    <Link to="/" className="flex items-center gap-2.5 px-2 py-1.5">
-      <div className="grid h-8 w-8 place-items-center rounded-lg gradient-primary shadow-soft">
+    <Link to="/" className="flex items-center gap-2.5 py-0.5">
+      <div className="grid h-8 w-8 place-items-center rounded-lg gradient-primary shadow-soft px-2">
         <span className="font-mono text-[11px] font-bold tracking-tight text-white">{"</>"}</span>
       </div>
+
       <div className="flex flex-col leading-tight">
         <span className="font-mono text-sm font-semibold tracking-tight">SOCODE</span>
         <span className="text-[10px] text-muted-foreground">v1.0 · workspace</span>
@@ -63,6 +65,7 @@ function AppSidebar() {
       <SidebarHeader className="border-b border-sidebar-border">
         <Brand />
       </SidebarHeader>
+      
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Workspace</SidebarGroupLabel>
@@ -108,6 +111,7 @@ function AppSidebar() {
             loading="lazy"
             className="profile-photo h-7 w-7 rounded-full border border-sidebar-border object-center"
           />
+          
           <div className="flex min-w-0 flex-col leading-tight">
             <span className="truncate text-xs font-medium">Samuel</span>
             <span className="truncate text-[10px] text-muted-foreground">Frontend Engineer</span>
@@ -120,9 +124,11 @@ function AppSidebar() {
 
 function Topbar() {
   const { open } = useCommandPalette();
+
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-2 border-b border-border glass px-3 sm:px-4">
       <SidebarTrigger className="-ml-1" />
+      
       <div className="hidden items-center gap-1.5 text-xs text-muted-foreground md:flex">
         <span>Workspace</span>
         <span className="opacity-50">/</span>
@@ -131,6 +137,7 @@ function Topbar() {
           <Sparkles className="mr-1 h-3 w-3" /> v1.0
         </Badge>
       </div>
+      
       <div className="ml-auto flex items-center gap-2">
         <Button
           variant="outline"
@@ -144,6 +151,7 @@ function Topbar() {
             ⌘K
           </kbd>
         </Button>
+        
         <Button
           variant="ghost"
           size="icon"
@@ -153,7 +161,9 @@ function Topbar() {
         >
           <CommandIcon className="h-4 w-4" />
         </Button>
+        
         <ThemeToggle />
+        
         <Button asChild size="sm" className="h-8">
           <Link to="/contact">Hire me</Link>
         </Button>
@@ -169,9 +179,11 @@ export function AppShell() {
         <AppSidebar />
         <div className="flex min-w-0 flex-1 flex-col">
           <Topbar />
+          
           <main className="relative flex-1">
-            <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-60 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-            <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] mesh-bg opacity-70" />
+            <div className="pointer-events-none absolute inset-0 -z-10 grid-bg opacity-60 mask-[linear-gradient(to_bottom,black,transparent_85%)]" />
+            
+            <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-105 mesh-bg opacity-70" />
             <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-8">
               <Outlet />
             </div>

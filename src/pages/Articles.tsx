@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { articles } from "@/data/articles";
 
-export default function Articles() {
+const Articles = () => {
   return (
     <div className="space-y-6">
       <header className="flex flex-col gap-2">
@@ -74,3 +74,5 @@ export default function Articles() {
     </div>
   );
 }
+
+export default Articles;

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { getProjectBySlug } from "@/data/projects";
+import { getProjectBySlug } from "@/data/projects/main";
 import NotFound from "@/pages/NotFound";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -33,7 +33,7 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
-export default function ProjectDetail() {
+const ProjectDetail = () => {
   const { slug } = useParams();
   const project = slug ? getProjectBySlug(slug) : undefined;
 
@@ -48,6 +48,10 @@ export default function ProjectDetail() {
       transition={{ duration: 0.35 }}
       className="space-y-8"
     >
+      <title>{project.title}</title>
+      <meta name="description" content={project.description} />
+      <meta name="keywords" content={project.technologies.join(", ")} />
+
       <div>
         <Button asChild variant="ghost" size="sm" className="-ml-2 h-8 text-muted-foreground">
           <Link to="/projects">
@@ -57,20 +61,27 @@ export default function ProjectDetail() {
       </div>
 
       <header className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
-        <div className="pointer-events-none absolute inset-0 -z-0 grid-bg-sm opacity-40 grid-fade" />
-        <div className="relative h-56 w-full" style={{ backgroundImage: project.thumbnail }} />
+        <div className="pointer-events-none absolute inset-0 z-0 grid-bg-sm opacity-40 grid-fade" />
+
+          <div className="relative h-56 w-full" style={{ backgroundImage: project.thumbnail }}>
+            <img src={project.image} alt={`${project.title} thumbnail`} className="h-10/12 w-2/3 max-w-90 mx-auto absolute top-[50%] translate-y-[-50%] inset-0 bg-linear-to-t from-black/30 to-transparent brightness-80 rounded-lg" />
+          </div>
+
         <div className="space-y-4 p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline" className="capitalize">
               {project.status.replace("-", " ")}
             </Badge>
           </div>
+
           <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
             {project.title}
           </h1>
+
           <p className="max-w-3xl text-balance text-base text-muted-foreground sm:text-lg">
             {project.description}
           </p>
+
           <div className="flex flex-wrap gap-1.5 pt-1">
             {project.technologies.map((t) => (
               <Badge key={t} variant="outline" className="font-mono text-[11px]">
@@ -78,6 +89,7 @@ export default function ProjectDetail() {
               </Badge>
             ))}
           </div>
+
           <div className="flex flex-wrap items-center gap-2 pt-1">
             {project.github ? (
               <Button asChild size="sm" variant={isFinished ? "default" : "outline"}>
@@ -109,15 +121,21 @@ export default function ProjectDetail() {
           <Section title="Summary">
             <p>{project.summary}</p>
           </Section>
-          <Section title="Highlights">
-            <BulletList items={project.highlights} />
-          </Section>
-          <Section title="Challenges">
-            <BulletList items={project.challenges} />
-          </Section>
-          <Section title="Lessons learned">
-            <BulletList items={project.lessonsLearned} />
-          </Section>
+          {!!project.highlights &&
+            <Section title="Highlights">
+              <BulletList items={project.highlights} />
+            </Section>
+          }
+          {!!project.challenges &&
+            <Section title="Challenges">
+              <BulletList items={project.challenges} />
+            </Section>
+          }
+          {!!project.lessonsLearned &&
+            <Section title="Lessons learned">
+              <BulletList items={project.lessonsLearned} />
+            </Section>
+          }
         </div>
 
         <aside className="space-y-4">
@@ -128,7 +146,7 @@ export default function ProjectDetail() {
             <CardContent className="space-y-3 text-sm">
               <div className="flex justify-between">
                 <span className="text-muted-foreground">Status</span>
-                <span className="capitalize">{project.status.replace("-", " ")}</span>
+                <span className="capitalize">{project.status === "production-iterating" ? project.status.replace("-", " • ") : project.status.replace("-", " ")}</span>
               </div>
               <Separator />
               <div className="flex justify-between gap-2">
@@ -156,3 +174,5 @@ export default function ProjectDetail() {
     </motion.article>
   );
 }
+
+export default ProjectDetail;

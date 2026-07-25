@@ -7,7 +7,7 @@ import { Markdown } from "@/components/shared/Markdown";
 import { getArticle, articles } from "@/data/articles";
 import NotFound from "@/pages/NotFound";
 
-export default function ArticleDetail() {
+const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticle(slug) : undefined;
   if (!article) return <NotFound />;
@@ -95,3 +95,5 @@ export default function ArticleDetail() {
     </article>
   );
 }
+
+export default ArticleDetail;

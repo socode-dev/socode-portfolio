@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 import {FaGithub as Github, FaLinkedin as Linkedin} from "react-icons/fa"
 import { useTheme } from "next-themes";
-import { projects } from "@/data/projects";
+import { projects } from "@/data/projects/main";
 import { articles } from "@/data/articles";
 
 interface PaletteCtx {
@@ -89,9 +89,9 @@ export function CommandPaletteProvider({ children }: { children: ReactNode }) {
             <CommandItem onSelect={() => go("/projects")}>
               <FolderKanban className="h-4 w-4" /> Projects
             </CommandItem>
-            <CommandItem onSelect={() => go("/articles")}>
+            {/* <CommandItem onSelect={() => go("/articles")}>
               <BookOpen className="h-4 w-4" /> Articles
-            </CommandItem>
+            </CommandItem> */}
             <CommandItem onSelect={() => go("/about")}>
               <User className="h-4 w-4" /> About
             </CommandItem>
@@ -111,12 +111,12 @@ export function CommandPaletteProvider({ children }: { children: ReactNode }) {
               <CommandItem key={p.id} onSelect={() => go(`/projects/${p.slug}`)}>
                 <FolderKanban className="h-4 w-4" />
                 <span>{p.title}</span>
-                <span className="ml-auto text-xs text-muted-foreground capitalize">{p.status.replace("-", " ")}</span>
+                <span className="ml-auto text-xs text-muted-foreground capitalize">{p.status === "production-iterating" ? p.status.replace("-", " • ") : p.status.replace("-", " ")}</span>
               </CommandItem>
             ))}
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Articles">
+          {/* <CommandGroup heading="Articles">
             {articles.map((a) => (
               <CommandItem key={a.slug} onSelect={() => go(`/articles/${a.slug}`)}>
                 <BookOpen className="h-4 w-4" />
@@ -124,7 +124,7 @@ export function CommandPaletteProvider({ children }: { children: ReactNode }) {
                 <span className="ml-auto text-xs text-muted-foreground">{a.readingTime}</span>
               </CommandItem>
             ))}
-          </CommandGroup>
+          </CommandGroup> */}
           <CommandSeparator />
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => { setTheme("light"); setIsOpen(false); }}>

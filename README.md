@@ -1,75 +1,43 @@
-# React + TypeScript + Vite
+# SoCode — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, SaaS-style personal portfolio built as a workspace-shell application. Inspired by the product surfaces of Linear, Stripe and Vercel — every page lives inside a persistent app shell with sidebar navigation, breadcrumbs, a ⌘K command palette and dynamic case-study routing.
 
-Currently, two official plugins are available:
+> Live: [Visit Live Portfolio](https://socode.verrcel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Highlights
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **App-shell architecture** - persistent sidebar, breadcrumbs, splash screen and a global ⌘K command palette.
+- **Data-driven projects** - every case study is a record in `src/data/projects.ts`, rendered by a flexible section engine (problem, solution, architecture, image grids, quotes, checklists…).
+- **Case-study renderer** - `ProjectDetail` maps section descriptors to premium UI blocks, with a metadata sidebar and “Related Projects” based on tech overlap.
+- **Premium dashboard** - About snapshot, tech stack preview, quick stats and shipped-status widgets.
+- **Design system** - Purple-accent + rich-charcoal palette, semantic tokens in `src/styles.css`, subtle grid backgrounds and Framer Motion transitions.
+- **First-class SEO** - `react-helmet-async` `<SEO />` wrapper on every route with OG / Twitter cards, canonical URLs and fallback tags in `index.html`.
+- **Dark / light theming** - `next-themes` with system preference detection and a header toggle.
+- **Accessible by default** - Radix primitives via shadcn/ui, keyboard-first navigation, focus-visible rings.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧱 Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Layer         | Choice                                                    |
+| ------------- | --------------------------------------------------------- |
+| Framework     | **React** + **TypeScript**                           |
+| Build tool    | **Vite**                                                |
+| Routing       | **React Router**                                       |
+| Styling       | **Tailwind CSS** + `tw-animate-css`                    |
+| UI primitives | **shadcn/ui** (Radix UI)                                  |
+| Animation     | **Framer Motion**                                         |
+| Icons         | **lucide-react**                                          |
+| Content       | **react-markdown** + `remark-gfm` + `rehype-highlight`    |
+| SEO           | **Built-in Native**                                    |
+| Theming       | **next-themes**                                           |
+| Forms         | **react-hook-form** + **zod**                             |
+| Tooling       | ESLint, Prettier, TypeScript strict                       |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
 
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+### Prerequisites

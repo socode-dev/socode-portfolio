@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Compass } from "lucide-react";
 
-export default function NotFound() {
+const NotFound = () =>  {
   return (
     <div className="grid min-h-[60vh] place-items-center">
       <div className="max-w-md space-y-4 text-center">
@@ -30,3 +30,5 @@ export default function NotFound() {
     </div>
   );
 }
+
+export default NotFound;

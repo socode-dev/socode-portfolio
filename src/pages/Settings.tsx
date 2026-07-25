@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 
 type Density = "comfortable" | "compact";
 
-export default function Settings() {
+const TITLE ="Settings" ;
+
+const DESCRIPTION ="Workspace preferences — theme, density, and accessibility.";
+
+const Settings = () => {
   const { theme, setTheme } = useTheme();
   const [reduceMotion, setReduceMotion] = useState(false);
   const [density, setDensity] = useState<Density>("comfortable");
@@ -22,6 +26,10 @@ export default function Settings() {
 
   return (
     <div className="space-y-6">
+
+      <title>{TITLE}</title>
+      <meta name="description" content={DESCRIPTION} />
+
       <header className="space-y-2">
         <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
           Settings
@@ -140,3 +148,6 @@ function Row({
     </div>
   );
 }
+
+
+export default Settings;
