@@ -1,6 +1,6 @@
-# SoCode — Portfolio
+# Socode - Portfolio
 
-A premium, SaaS-style personal portfolio built as a workspace-shell application. Inspired by the product surfaces of Linear, Stripe and Vercel — every page lives inside a persistent app shell with sidebar navigation, breadcrumbs, a ⌘K command palette and dynamic case-study routing.
+A premium, SaaS-style personal portfolio built as a workspace-shell application. Inspired by the product surfaces of Linear, Stripe and Vercel. Every page lives inside a persistent app shell with sidebar navigation, breadcrumbs, a ⌘K command palette and dynamic case-study routing.
 
 > Live: [Visit Live Portfolio](https://socode.verrcel.app)
 
