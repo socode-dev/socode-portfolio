@@ -69,7 +69,7 @@ const ProjectDetail = () => {
         <div className="pointer-events-none absolute inset-0 z-0 grid-bg-sm opacity-40 grid-fade" />
 
           <div className="relative h-56 w-full" style={{ backgroundImage: project.thumbnail }}>
-            <img src={project.image} alt={`${project.title} thumbnail`} className="h-10/12 w-2/3 max-w-90 mx-auto absolute top-[50%] translate-y-[-50%] inset-0 bg-linear-to-t from-black/30 to-transparent brightness-80 rounded-lg" />
+            <img src={project.image} alt={`${project.title} thumbnail`} loading="lazy" className="h-10/12 w-2/3 max-w-90 mx-auto absolute top-[50%] translate-y-[-50%] inset-0 bg-linear-to-t from-black/30 to-transparent brightness-80 rounded-lg" />
           </div>
 
         <div className="space-y-4 p-6 sm:p-8">

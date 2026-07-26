@@ -26,7 +26,7 @@ const ProjectThumbnail = ({project}: {project: Project}) => {
             style={{ backgroundImage: project.thumbnail }}
         >
             {project.image ? (
-                <img src={project.image} alt={`${project.title} thumbnail`} className="h-10/12 w-2/3 mx-auto absolute top-[50%] translate-y-[-50%] inset-0 bg-linear-to-t from-black/30 to-transparent brightness-80 rounded-lg" />
+                <img src={project.image} alt={`${project.title} thumbnail`} loading="lazy" className="h-10/12 w-2/3 mx-auto absolute top-[50%] translate-y-[-50%] inset-0 bg-linear-to-t from-black/30 to-transparent brightness-80 rounded-lg" />
             ) : (
                 <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
             )}
