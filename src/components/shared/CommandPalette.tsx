@@ -20,7 +20,7 @@ import {
 import {
   LayoutDashboard,
   FolderKanban,
-  BookOpen,
+  // BookOpen,
   User,
   Wrench,
   Mail,
@@ -31,7 +31,7 @@ import {
 import {FaGithub as Github, FaLinkedin as Linkedin} from "react-icons/fa"
 import { useTheme } from "next-themes";
 import { projects } from "@/data/projects/main";
-import { articles } from "@/data/articles";
+// import { articles } from "@/data/articles";
 
 interface PaletteCtx {
   open: () => void;

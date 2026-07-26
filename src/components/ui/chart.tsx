@@ -94,7 +94,7 @@ const ChartTooltip = RechartsPrimitive.Tooltip;
 
 const ChartTooltipContent = forwardRef<
   HTMLDivElement,
-  ComponentProps<typeof RechartsPrimitive.Tooltip> &
+  RechartsPrimitive.TooltipContentProps &
     ComponentProps<"div"> & {
       hideLabel?: boolean;
       hideIndicator?: boolean;
@@ -174,7 +174,7 @@ const ChartTooltipContent = forwardRef<
 
               return (
                 <div
-                  key={item.dataKey}
+                  key={`${item.dataKey ?? item.name ?? index}`}
                   className={cn(
                     "flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
                     indicator === "dot" && "items-center",
@@ -243,7 +243,7 @@ const ChartLegend = RechartsPrimitive.Legend;
 const ChartLegendContent = forwardRef<
   HTMLDivElement,
   ComponentProps<"div"> &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+    Pick<RechartsPrimitive.DefaultLegendContentProps, "payload" | "verticalAlign"> & {
       hideIcon?: boolean;
       nameKey?: string;
     }
