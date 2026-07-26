@@ -1,21 +1,34 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
 import { AppShell } from "@/components/layout/AppShell";
 import Dashboard from "@/pages/dashboard/Dashboard";
-import Projects from "@/pages/projects/Projects";
-import ProjectDetail from "@/pages/projects/ProjectDetail";
-// import Articles from "@/pages/Articles";
-// import ArticleDetail from "@/pages/ArticleDetail";
-import About from "@/pages/About";
-import Skills from "@/pages/Skills";
-import Contact from "@/pages/contact/Contact";
-import Settings from "@/pages/Settings";
-import NotFound from "@/pages/NotFound";
+import {
+  ProjectsSkeleton, 
+  ProjectDetailSkeleton, 
+  SkillsSkeleton, 
+  AboutSkeleton, 
+  ContactSkeleton,
+  // ArticlesSkeleton,
+  // ArticleDetailLoading,
+  SettingsSkeleton,
+  NotFoundSkeleton
+} from "@/skeletons/index"
+import LazyWrapper from "./lazy/LazyWrapper";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SplashScreen } from "@/components/shared/SplashScreen";
 import { CommandPaletteProvider } from "@/components/shared/CommandPalette";
 import { cn } from "./lib/utils";
+
+const Projects = lazy(() => import("@/pages/projects/Projects"));
+const ProjectDetail = lazy(() => import("@/pages/projects/ProjectDetail"));
+// const Articles = lazy(() => import("@/pages/Articles"));
+// const ArticleDetail = lazy(() => import("@/pages/ArticleDetail"));
+const About = lazy(() => import("@/pages/About"));
+const Skills = lazy(() => import("@/pages/Skills"));
+const Contact = lazy(() => import("@/pages/contact/Contact"));
+const Settings = lazy(() => import("@/pages/Settings"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 export default function App() {
   const [booted, setBooted] = useState(false);
@@ -35,15 +48,60 @@ export default function App() {
         <Routes>
           <Route element={<AppShell />}>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:slug" element={<ProjectDetail />} />
-            {/* <Route path="/articles" element={<Articles />} />
-            <Route path="/articles/:slug" element={<ArticleDetail />} /> */}
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="*" element={<NotFound />} />
+            
+            <Route path="/projects" element={
+              <LazyWrapper loadingFallback={<ProjectsSkeleton />}>
+                <Projects />
+              </LazyWrapper>
+            } />
+
+            <Route path="/projects/:slug" element={
+              <LazyWrapper loadingFallback={<ProjectDetailSkeleton />}>
+                <ProjectDetail />
+              </LazyWrapper>
+            } />
+
+            {/* <Route path="/articles" element={
+              <LazyWrapper loadingFallback={<ArticlesSkeleton />}>
+                <Articles />
+              </LazyWrapper>
+            } />
+            
+            <Route path="/articles/:slug" element={
+              <LazyWrapper loadingFallback={<ArticleDetailLoading />}>
+                <ArticleDetail />
+              </LazyWrapper>
+            } /> */}
+            
+            <Route path="/about" element={
+              <LazyWrapper loadingFallback={<AboutSkeleton />}>
+                <About />
+              </LazyWrapper>
+            } />
+
+            <Route path="/skills" element={
+              <LazyWrapper loadingFallback={<SkillsSkeleton />}>
+                <Skills />
+              </LazyWrapper>
+            } />
+            
+            <Route path="/contact" element={
+              <LazyWrapper loadingFallback={<ContactSkeleton />}>
+                <Contact />
+              </LazyWrapper>
+            } />
+            
+            <Route path="/settings" element={
+              <LazyWrapper loadingFallback={<SettingsSkeleton />}>
+                <Settings />
+              </LazyWrapper>
+            } />
+
+            <Route path="*" element={
+              <LazyWrapper loadingFallback={<NotFoundSkeleton />}>
+                <NotFound />
+              </LazyWrapper>
+            } />
           </Route>
         </Routes>
         </div>

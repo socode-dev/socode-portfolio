@@ -1,5 +1,6 @@
 import Details from "./components/Details";
 import Form from "./components/Form";
+import { SEO } from "@/components/shared/SEO";
 
 const TITLE ="Contact";
 
@@ -12,9 +13,7 @@ const Contact = () => {
   return (
     <div className="space-y-8">
 
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <meta name="keywords" content={KEYWORDS.join(", ")} />
+      <SEO title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} path="/contact" />
 
       <header className="space-y-3">
         <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">

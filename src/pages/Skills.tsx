@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {stack} from "@/data/stack"
+import { SEO } from "@/components/shared/SEO";
 
 const TITLE = "Skills";
 
@@ -13,9 +14,7 @@ const Skills = () => {
   return (
     <div className="space-y-8">
       
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <meta name="keywords" content={KEYWORDS.join(", ")} />
+      <SEO title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} path="/skills" />
 
       <header className="space-y-3">
         <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">

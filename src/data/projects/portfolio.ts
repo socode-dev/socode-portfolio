@@ -6,15 +6,15 @@ export const portfolio: Project = {
     slug: "portfolio",
     title: "This Portfolio",
     description:
-      "The portfolio you are currently using, built as a SaaS-style application with a sidebar, command palette and data-driven pages.",
+      "A product-style portfolio that presents who I am, the stack I work with and the projects I have built through a focused, app-like experience.",
     thumbnail: "linear-gradient(135deg, #a78bfa 0%, #4f46e5 100%)",
     image: PortfolioThumbnail,
-    technologies: ["Vite", "React", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
+    technologies: ["Vite", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
     status: "shipped",
-    github: "https://github.com/",
+    github: "https://github.com/socode-dev",
     liveDemo: "/",
     summary:
-      "A portfolio designed to feel like a real product rather than a single scrolling page. It uses React Router, a typed projects data source, a command palette and a settings page, so the experience of using it is itself part of the case study.",
+      "This portfolio is both a personal profile and a working example of how I think about product interfaces. Instead of using a traditional one-page resume layout, I structured it like a lightweight SaaS app: a dashboard introduces the main signal, project pages show what I have shipped, the skills section explains the tools I use, and the contact flow makes it easy to reach me. The product-style shell is a design choice, but the purpose is simple: make my experience, technical range and project work easy to explore.",
     problem: "",
     highlights: [
       "Dashboard, projects, articles and settings as real routes",

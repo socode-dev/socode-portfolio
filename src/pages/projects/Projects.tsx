@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import ProjectCard from "./components/ProjectCard";
 import Pagination from "./components/Pagination";
+import { SEO } from "@/components/shared/SEO";
 
 const PER_PAGE = 6;
 
@@ -37,9 +38,7 @@ const Projects = () => {
   return (
     <div className="space-y-6">
       
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <meta name="keywords" content={KEYWORDS.join(", ")} />
+      <SEO title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} path="/projects" />
 
       <Header filtered={filtered}/>
 

@@ -4,22 +4,40 @@ import QuickStat from "./components/QuickStat";
 import PinnedProjects from "./components/PinnedProjects";
 import AboutSnapshot from "./components/AboutSnapshot";
 import Footer from "./components/Footer";
+import { SEO } from "@/components/shared/SEO";
 // import LatestWriting from "./components/LatestWriting";
 
-const TITLE = "Dashboard";
+const TITLE = "SOCODE - Samuel | Frontend Engineer";
 
 const DESCRIPTION = "Samuel's frontend engineering workspace - featured React and TypeScript projects, tech stack, and current focus areas.";
 
 const KEYWORDS = ["Samuel", "frontend engineer portfolio", "React", "TypeScript", "AI apps"];
+
+const STRUCTURED_DATA = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Samuel",
+    url: "https://socode.vercel.app/",
+    jobTitle: "Frontend Engineer",
+    knowsAbout: ["React", "TypeScript", "Tailwind CSS", "AI-powered products"],
+    sameAs: ["https://github.com/socode-dev"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "SOCODE",
+    url: "https://socode.vercel.app/",
+    description: DESCRIPTION,
+  },
+];
 
 const Dashboard = () => {
 
   return (
     <div className="space-y-6">
 
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <meta name="keywords" content={KEYWORDS.join(", ")} />
+      <SEO title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} jsonLd={STRUCTURED_DATA} />
 
       <Hero />
 

@@ -4,12 +4,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
+import { SEO } from "@/components/shared/SEO";
 
 type Density = "comfortable" | "compact";
 
 const TITLE ="Settings" ;
 
-const DESCRIPTION ="Workspace preferences — theme, density, and accessibility.";
+const DESCRIPTION ="Workspace preferences - theme, density, and accessibility.";
 
 const Settings = () => {
   const { theme, setTheme } = useTheme();
@@ -27,8 +28,7 @@ const Settings = () => {
   return (
     <div className="space-y-6">
 
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
+      <SEO title={TITLE} description={DESCRIPTION} path="/settings" noIndex />
 
       <header className="space-y-2">
         <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">

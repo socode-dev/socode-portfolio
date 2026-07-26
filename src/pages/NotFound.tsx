@@ -1,10 +1,18 @@
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Compass } from "lucide-react";
+import { SEO } from "@/components/shared/SEO";
 
 const NotFound = () =>  {
   return (
     <div className="grid min-h-[60vh] place-items-center">
+      <SEO
+        title="Page Not Found"
+        description="The requested page could not be found."
+        path="/404"
+        noIndex
+      />
+
       <div className="max-w-md space-y-4 text-center">
         <div className="mx-auto grid h-14 w-14 place-items-center rounded-xl border border-border bg-card shadow-soft">
           <Compass className="h-6 w-6 text-primary" />
