@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import { SEO } from "@/components/shared/SEO";
 
 const TITLE = "About";
 
@@ -12,9 +13,7 @@ const About = () => {
   return (
     <div className="space-y-8">
 
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <meta name="keywords" content={KEYWORDS.join(", ")} />
+      <SEO title={TITLE} description={DESCRIPTION} keywords={KEYWORDS} path="/about" />
 
       <header className="space-y-3">
         <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">

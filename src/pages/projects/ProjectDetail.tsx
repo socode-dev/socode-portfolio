@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { getProjectBySlug } from "@/data/projects/main";
 import NotFound from "@/pages/NotFound";
+import { SEO } from "@/components/shared/SEO";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -48,9 +49,13 @@ const ProjectDetail = () => {
       transition={{ duration: 0.35 }}
       className="space-y-8"
     >
-      <title>{project.title}</title>
-      <meta name="description" content={project.description} />
-      <meta name="keywords" content={project.technologies.join(", ")} />
+      <SEO
+        title={`${project.title} Case Study`}
+        description={project.description}
+        keywords={[project.title, ...project.technologies]}
+        path={`/projects/${project.slug}`}
+        image={project.image}
+      />
 
       <div>
         <Button asChild variant="ghost" size="sm" className="-ml-2 h-8 text-muted-foreground">
