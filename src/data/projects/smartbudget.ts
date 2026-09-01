@@ -40,7 +40,6 @@ export const smartbudget: Project = {
     "Constraining AI to interpretation only makes the system more trustworthy, not less intelligent",
     "Separating what the system calculates from what it says about those calculations is a product design decision, not just a technical one",
     "Shipping a narrow slice well beats shipping a wide slice half-built",
-    "Status: pilot-ready phase. Target deployment: microfinance banks.",
   ],
   
   pinned: true,
