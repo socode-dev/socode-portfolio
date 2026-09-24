@@ -27,7 +27,7 @@ export const stack: StackGroup[] = [
     title: "State & UI",
     description: "How I assemble interfaces and manage states.",
     icon: Palette,
-    skills: ["Zustand", "Context API", "shadcn/ui", "Radix UI", "Framer Motion"],
+    skills: ["Zustand", "Context API", "shadcn/ui", "Framer Motion"],
   },
   {
     title: "Backend / BaaS",
@@ -45,7 +45,7 @@ export const stack: StackGroup[] = [
     title: "Tools & Testing",
     description: "What i build with.",
     icon: Toolbox,
-    skills: ["Jest", "Playwright", "Git", "GitHub", "Vitest", "Vite"],
+    skills: ["Jest", "Playwright", "Git", "MSW", "GitHub Actions", "Vitest", "Vite"],
   },
   {
     title: "Deployment",

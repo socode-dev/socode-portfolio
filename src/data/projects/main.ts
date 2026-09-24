@@ -5,8 +5,10 @@ import { portfolio } from "./portfolio";
 import { skillsync } from "./skillsync";
 import { gtstore } from "./gtstore";
 import { xtremefit } from "./xtremefit";
+import { resolveos } from "./resolveos";
 
 export const projects: Project[] = [
+  resolveos,
   smartbudget,
   skillforge,
   portfolio,
