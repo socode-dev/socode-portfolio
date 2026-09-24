@@ -30,5 +30,5 @@ export const portfolio: Project = {
       "Constraints: no fake content, no fake metrics - sharpen the design",
       "Application-feeling UIs reward boring, consistent layout primitives",
     ],
-    pinned: true,
+    pinned: false,
   }
