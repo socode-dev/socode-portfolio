@@ -1,5 +1,5 @@
 import type { Project } from "@/types/project";
-import { smartbudget } from "./smartbudget";
+import { vydra } from "./vydra";
 import { skillforge } from "./skillforge";
 import { portfolio } from "./portfolio";
 import { skillsync } from "./skillsync";
@@ -9,7 +9,7 @@ import { resolveos } from "./resolveos";
 
 export const projects: Project[] = [
   resolveos,
-  smartbudget,
+  vydra,
   skillforge,
   portfolio,
   skillsync,

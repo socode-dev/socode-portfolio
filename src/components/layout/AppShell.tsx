@@ -2,13 +2,11 @@ import { Outlet, Link, useLocation } from "react-router";
 import {
   LayoutDashboard,
   FolderKanban,
-  // BookOpen,
   User,
   Wrench,
   Mail,
   Settings as SettingsIcon,
   Command as CommandIcon,
-  Sparkles,
 } from "lucide-react";
 import {
   Sidebar,
@@ -27,13 +25,11 @@ import {
 import { ThemeToggle } from "@/components/shared/ThemeToggle";
 import { useCommandPalette } from "@/components/shared/CommandPalette";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const nav = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Projects", url: "/projects", icon: FolderKanban },
-  // { title: "Articles", url: "/articles", icon: BookOpen },
   { title: "About", url: "/about", icon: User },
   { title: "Skills", url: "/skills", icon: Wrench },
   { title: "Contact", url: "/contact", icon: Mail },
@@ -47,10 +43,7 @@ function Brand() {
         <span className="font-mono text-[11px] font-bold tracking-tight text-white">{"</>"}</span>
       </div>
 
-      <div className="flex flex-col leading-tight">
         <span className="font-mono text-sm font-semibold tracking-tight">SOCODE</span>
-        <span className="text-[10px] text-muted-foreground">v1.0 · workspace</span>
-      </div>
     </Link>
   );
 }
@@ -102,17 +95,15 @@ function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="border-t border-sidebar-border">
-        <div className="flex items-center gap-2 px-2 py-1.5">
+        <div className="flex items-center gap-2 px-2 py-1.5 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:gap-0 group-data-[collapsible=icon]:px-0">
           <img
             src={profilePhoto}
             alt="Samuel"
-            width={28}
-            height={28}
             loading="lazy"
-            className="profile-photo h-7 w-7 rounded-full border border-sidebar-border object-center"
+            className="profile-photo h-7 min-w-7 rounded-full border border-sidebar-border object-fill"
           />
           
-          <div className="flex min-w-0 flex-col leading-tight">
+          <div className="flex min-w-0 flex-col leading-tight group-data-[collapsible=icon]:hidden">
             <span className="truncate text-xs font-medium">Samuel</span>
             <span className="truncate text-[10px] text-muted-foreground">Frontend Engineer</span>
           </div>
@@ -133,9 +124,6 @@ function Topbar() {
         <span>Workspace</span>
         <span className="opacity-50">/</span>
         <span className="text-foreground">Samuel</span>
-        <Badge variant="secondary" className="ml-1 h-5 px-1.5 text-[10px] font-medium">
-          <Sparkles className="mr-1 h-3 w-3" /> v1.0
-        </Badge>
       </div>
       
       <div className="ml-auto flex items-center gap-2">

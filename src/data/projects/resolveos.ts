@@ -15,7 +15,7 @@ export const resolveos: Project = {
 
   image: ResolveOSThumbnail,
 
-  technologies: [ "React", "TypeScript", "Vite", "React Router", "TanStack Query", "Axios", "Zod", "React Hook Form", "Tailwind CSS", "shadcn/ui", "Base UI", "MSW", "Vitest", "React Testing Library", "vite-plugin-pwa"],
+  technologies: [ "React", "TypeScript", "Vite", "Tailwind CSS", "TanStack Query", "Axios", "Zod", "React Hook Form", "Vite PWA", "shadcn/ui", "Base UI", "MSW", "Vitest", "React Testing Library"],
 
   status: "in-progress",
 
