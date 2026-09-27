@@ -45,7 +45,7 @@ export const stack: StackGroup[] = [
     title: "Tools & Testing",
     description: "What i build with.",
     icon: Toolbox,
-    skills: ["Jest", "Playwright", "Git", "MSW", "GitHub Actions", "Vitest", "Vite"],
+    skills: ["Jest", "Playwright", "Git", "MSW", "GitHub Actions", "Vitest", "Vite", "Vite PWA"],
   },
   {
     title: "Deployment",
