@@ -2,19 +2,18 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import type { Project } from "@/types/project";
+import type { Project, ProjectStatus } from "@/types/project";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ExternalLink, FileText } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router";
 
-const statusStyles: Record<string, string> = {
-  "in-progress":
-    "bg-amber-500/20 text-amber-700 dark:text-amber-300 border border-amber-500/30",
-  shipped:
-    "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30",
-  archived: "bg-muted text-muted-foreground border border-border",
-  concept: "bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30",
+const statusStyles: Record<ProjectStatus, string> = {
+    "in-progress": "bg-amber-500/20 text-amber-500 dark:text-amber-300 border border-amber-500/30",
+    "production-iterating": "bg-fuchsia-500/20 text-fuchsia-500 dark:text-fuchsia-300 border border-fuchsia-500/30",
+    shipped: "bg-emerald-500/20 text-emerald-900 dark:text-emerald-300 border border-emerald-500/30",
+    archived: "bg-muted text-muted-foreground border border-border",
+    concept: "bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/30",
 };
 
 const ProjectThumbnail = ({project}: {project: Project}) => {
@@ -33,7 +32,7 @@ const ProjectThumbnail = ({project}: {project: Project}) => {
 
             <div className="absolute left-3 top-3">
                 <span
-                    className={cn("backdrop-blur-md shadow-md rounded-full px-2 py-0.5 text-[10px] font-medium capitalize", statusStyles[project.status])}
+                    className={cn("backdrop-blur-3xl shadow-md rounded-full px-2 py-0.5 text-[10px] font-medium capitalize", statusStyles[project.status])}
                 >
                     {project.status === "production-iterating" ? project.status.replace("-", " • ") : project.status.replace("-", " ")}
                 </span>
@@ -96,7 +95,7 @@ const ProjectDetail = ({project}: {project: Project}) => {
                 <Link
                     to={`/projects/${project.slug}`}
                     className="font-medium w-fit text-xs text-primary hover:underline"
-                >View details →</Link>
+                >Case Study →</Link>
             </div>
             
         </div>

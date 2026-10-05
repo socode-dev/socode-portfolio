@@ -36,9 +36,9 @@ const Hero = () => {
             <p className="text-sm text-muted-foreground sm:text-base">
               I believe software should be predictable first, intelligent second. Build systems you can trust, then use AI to make them easier to understand. I'm currently evolving{" "}
               <Link to="/projects/smartbudget" className="font-medium text-foreground hover:text-primary">
-                SmartBudget
+                Vydra
               </Link>
-              , a deterministic financial intelligence platform built on that principle.
+              , a personal financial intelligence platform built on that principle.
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <Button asChild size="sm">

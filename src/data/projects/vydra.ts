@@ -19,19 +19,21 @@ export const vydra: Project = {
   github: "https://github.com/socode-dev/vydra",
   liveDemo: "https://usevydra.vercel.app",
     
-  summary: "Vydra helps users understand their financial flow and make informed decisions. The frontend combines a responsive financial dashboard, interactive reports, AI-generated insights, and installable PWA behavior while keeping financial calculations deterministic and auditable.",
+  summary: "Vydra is a personal financial intelligence platform that helps users understand their financial activity, identify meaningful patterns, and make informed decisions. Under the hood, deterministic financial signal engines analyze activity while an AI layer provides contextual explanations, with external data ingestion, operational telemetry, and a responsive frontend bringing the resulting intelligence to users.",
 
-  problem: "Most personal finance tools display transactions and charts without explaining what requires attention. Vydra addresses this by separating financial computation from interpretation: the system calculates the facts, while AI explains the most meaningful signals without owning the underlying numbers.",
+  problem: "Most personal finance tools display transactions and charts without explaining what requires attention. Vydra addresses this product problem by separating financial computation from interpretation: the system calculates the facts, while AI explains the most meaningful signals without owning the underlying numbers.",
     
   highlights: [
-    "Built a responsive React financial dashboard with reusable layouts, charts, reports, filters, modals, responsive tables, and PWA support.",
+    "Built a responsive React financial dashboard that turns complex financial activity into clear workflows across overview, transactions, budgets, goals, insights, and reports.",
+    "Designed a role-aware admin dashboard for customer activity, intelligence, data operations, and operational investigation.",
     "Implemented a deterministic financial engine for budget calculations, spending categorisation, anomaly detection, and financial summaries.",
-    "Added a secure data ingestion pipeline that processes customer and transaction CSV files through SFTP, validates imports, generates invitations, and supports failed-file recovery.",
     "Added an AI interpretation layer where the system calculates the financial facts and AI explains the most relevant signals without owning business logic.",
+    "Added a secure data ingestion pipeline that processes customer and transaction CSV files through SFTP, validates imports, generates invitations, and supports failed-file recovery.",
     "Designed the frontend around Zustand, React Context, Firebase Authentication, Firestore, and reusable feature-level components.",
   ],
 
   challenges: [
+    "Turning dense financial data into interfaces that feel calm, legible and useful without hiding important context.",
     "Designing a prompt layer that remains stable as financial data grows while keeping AI responses grounded in deterministic signals.",
     "Building a composable financial engine where new calculation and insight rules can be added without disrupting existing behavior.",
     "Designing a reliable SFTP ingestion workflow with validation, file lifecycle management, delivery spooling, retries, and detailed failure diagnostics.",
@@ -42,7 +44,8 @@ export const vydra: Project = {
     "Constraining AI to interpretation makes the system more trustworthy, not less intelligent.",
     "Separating calculated facts from explanations creates a clearer and more auditable product boundary.",
     "Reliable data ingestion requires explicit validation, recovery paths, and observable failure states rather than assuming every import will succeed.",
-    "A reusable frontend architecture is most valuable when multiple financial workflows depend on the same data and interaction patterns.",
+    "Product clarity depends on making complex workflows understandable before adding more functionality.",
+    "A reusable frontend architecture is most valuable when multiple workflows depend on the same data and interaction patterns.",
   ],
   
   pinned: true,

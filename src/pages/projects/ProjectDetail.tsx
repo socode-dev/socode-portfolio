@@ -75,7 +75,7 @@ const ProjectDetail = () => {
         <div className="space-y-4 p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline" className="capitalize">
-              {project.status.replace("-", " ")}
+              {project.status === "production-iterating" ? project.status.replace("-", " • ") : project.status.replace("-", " ")}
             </Badge>
           </div>
 
@@ -84,7 +84,7 @@ const ProjectDetail = () => {
           </h1>
 
           <p className="max-w-3xl text-balance text-base text-muted-foreground sm:text-lg">
-            {project.description}
+            {project.summary}
           </p>
 
           <div className="flex flex-wrap gap-1.5 pt-1">
@@ -96,47 +96,54 @@ const ProjectDetail = () => {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 pt-1">
-            {project.github ? (
+            {project.github && (
               <Button asChild size="sm" variant={isFinished ? "default" : "outline"}>
                 <a href={project.github} target="_blank" rel="noreferrer">
                   <Github className="h-4 w-4" /> GitHub
                 </a>
               </Button>
-            ) : null}
-            {project.liveDemo ? (
+            )}
+
+            {!!project.liveDemo && (
               <Button asChild size="sm" variant="outline">
                 <a href={project.liveDemo} target="_blank" rel="noreferrer">
                   <ExternalLink className="h-4 w-4" /> Live Demo
                 </a>
               </Button>
-            ) : null}
-            {project.documentation ? (
+            )}
+
+            {project.documentation && (
               <Button asChild size="sm" variant="outline">
                 <a href={project.documentation} target="_blank" rel="noreferrer">
                   <FileText className="h-4 w-4" /> Documentation
                 </a>
               </Button>
-            ) : null}
+            )}
           </div>
         </div>
       </header>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="space-y-8 lg:col-span-2">
-          <Section title="Summary">
-            <p>{project.summary}</p>
-          </Section>
-          {!!project.highlights &&
+          {project.problem && 
+            <Section title="Problem">
+              <p>{project.problem}</p>
+            </Section>
+          }
+
+          {!!project.highlights?.length &&
             <Section title="Highlights">
               <BulletList items={project.highlights} />
             </Section>
           }
-          {!!project.challenges &&
+
+          {!!project.challenges?.length &&
             <Section title="Challenges">
               <BulletList items={project.challenges} />
             </Section>
           }
-          {!!project.lessonsLearned &&
+
+          {!!project.lessonsLearned?.length &&
             <Section title="Lessons learned">
               <BulletList items={project.lessonsLearned} />
             </Section>
