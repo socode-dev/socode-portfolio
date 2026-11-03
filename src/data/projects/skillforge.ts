@@ -1,4 +1,4 @@
-import SkillForgeThumbnail from "@/assets/skillforge-thumbnail.png";
+import SkillForgeThumbnail from "@/assets/skillforge-thumbnail.webp";
 import type { Project } from "@/types/project";
 
 export const skillforge: Project = {
@@ -12,7 +12,13 @@ export const skillforge: Project = {
   thumbnail: "linear-gradient(135deg, #06b6d4 0%, #7c3aed 100%)",
   image: SkillForgeThumbnail,
   
-  technologies: ["Vite", "React", "TypeScript", "Tailwind CSS", "Firebase", "Firestore", "Cloud Functions", "Jest", "Playwright", "Github Actions(CI)"],
+featuredStack: ["React", "TypeScript", "Firebase", "Playwright"],
+
+  technologies: {
+    "Frontend": ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    "Backend & Services": ["Firebase", "Firestore", "Cloud Functions"],
+    "Testing & CI": ["Jest", "Playwright", "Github Actions"],
+  },
   
   status: "shipped",
   

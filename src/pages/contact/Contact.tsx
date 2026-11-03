@@ -4,7 +4,7 @@ import { SEO } from "@/components/shared/SEO";
 
 const TITLE ="Contact";
 
-const DESCRIPTION ="Get in touch with Samuel — open to frontend engineering roles and collaborations. Reach out by email, GitHub, or LinkedIn.";
+const DESCRIPTION ="Get in touch with Samuel - open to frontend engineering roles and collaborations. Reach out by email, GitHub, or LinkedIn.";
 
 const KEYWORDS = ["contact Samuel", "hire frontend engineer", "React developer"];
 

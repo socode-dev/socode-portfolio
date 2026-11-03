@@ -5,7 +5,7 @@ import { ArrowRight, FileText, Mail } from "lucide-react";
 import { Link } from "react-router";
 import RESUME from "@/assets/my-resume.pdf";
 
-const STACK = ["React", "TypeScript", "Tailwind CSS", "Firebase", "Vercel Serverless Functions", "AI"];
+const STACK = ["React", "TypeScript", "State Management", "API Integrations", "Unit & End-to-End Testing"];
 
 const Hero = () => {
 
@@ -28,17 +28,13 @@ const Hero = () => {
             <h1 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
               Samuel {`>`} Frontend Engineer building{" "}
               <span className="bg-clip-text text-transparent gradient-primary">
-                thoughtful React products
+                thoughtful, reliable
               </span>{" "}
-              with practical AI integration.
+              web applications.
             </h1>
             
             <p className="text-sm text-muted-foreground sm:text-base">
-              I believe software should be predictable first, intelligent second. Build systems you can trust, then use AI to make them easier to understand. I'm currently evolving{" "}
-              <Link to="/projects/smartbudget" className="font-medium text-foreground hover:text-primary">
-                Vydra
-              </Link>
-              , a personal financial intelligence platform built on that principle.
+              I build user-focused applications with React and TypeScript, turning complex requirements into intuitive interfaces. From financial dashboards to engineering platforms, I care about usability, performance, and building products that work reliably.
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <Button asChild size="sm">

@@ -10,18 +10,18 @@ import { getProjectBySlug } from "@/data/projects/main";
 import NotFound from "@/pages/NotFound";
 import { SEO } from "@/components/shared/SEO";
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+const Section = ({ title, children }: { title: string; children: React.ReactNode }) => {
   return (
     <section className="space-y-3">
       <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
         {title}
       </h2>
-      <div className="space-y-2 text-sm leading-relaxed text-foreground/90">{children}</div>
+      <div className="space-y-2 text-[15px] leading-7 text-foreground/90 sm:text-sm sm:leading-relaxed">{children}</div>
     </section>
   );
 }
 
-function BulletList({ items }: { items: string[] }) {
+const BulletList = ({ items }: { items: string[] }) => {
   return (
     <ul className="space-y-1.5">
       {items.map((f) => (
@@ -52,7 +52,7 @@ const ProjectDetail = () => {
       <SEO
         title={`${project.title} Case Study`}
         description={project.description}
-        keywords={[project.title, ...project.technologies]}
+        keywords={[project.title, ...Object.values(project.technologies).flat()]}
         path={`/projects/${project.slug}`}
         image={project.image}
       />
@@ -83,17 +83,9 @@ const ProjectDetail = () => {
             {project.title}
           </h1>
 
-          <p className="max-w-3xl text-balance text-base text-muted-foreground sm:text-lg">
+          <p className="w-full text-balance text-base text-muted-foreground sm:text-lg">
             {project.summary}
           </p>
-
-          <div className="flex flex-wrap gap-1.5 pt-1">
-            {project.technologies.map((t) => (
-              <Badge key={t} variant="outline" className="font-mono text-[11px]">
-                {t}
-              </Badge>
-            ))}
-          </div>
 
           <div className="flex flex-wrap items-center gap-2 pt-1">
             {project.github && (
@@ -124,7 +116,7 @@ const ProjectDetail = () => {
       </header>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        <div className="space-y-8 lg:col-span-2">
+        <div className="order-2 min-w-0 space-y-8 lg:order-1 lg:col-span-2">
           {project.problem && 
             <Section title="Problem">
               <p>{project.problem}</p>
@@ -150,7 +142,7 @@ const ProjectDetail = () => {
           }
         </div>
 
-        <aside className="space-y-4">
+        <aside className="order-1 min-w-0 space-y-4 lg:order-2">
           <Card>
             <CardHeader>
               <CardTitle className="text-sm">Project meta</CardTitle>
@@ -160,25 +152,39 @@ const ProjectDetail = () => {
                 <span className="text-muted-foreground">Status</span>
                 <span className="capitalize">{project.status === "production-iterating" ? project.status.replace("-", " • ") : project.status.replace("-", " ")}</span>
               </div>
+              
               <Separator />
+              
               <div className="flex justify-between gap-2">
                 <span className="text-muted-foreground">Slug</span>
                 <span className="truncate font-mono text-xs">{project.slug}</span>
               </div>
             </CardContent>
           </Card>
+
           <Card>
             <CardHeader>
               <CardTitle className="text-sm">Tech stack</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-1.5">
-                {project.technologies.map((t) => (
-                  <Badge key={t} variant="outline" className="font-mono text-[11px]">
-                    {t}
-                  </Badge>
-                ))}
-              </div>
+
+            <CardContent className="space-y-4">
+              {Object.entries(project.technologies).map(([category, technologies]) => (
+                <div key={category} className="space-y-2.5">
+                  <h4 className="text-xs text-muted-foreground font-medium">{category}</h4>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {technologies.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="outline"
+                        className="font-mono text-[11px]"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </CardContent>
           </Card>
         </aside>

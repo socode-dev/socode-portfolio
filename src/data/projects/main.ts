@@ -5,10 +5,10 @@ import { portfolio } from "./portfolio";
 import { skillsync } from "./skillsync";
 import { gtstore } from "./gtstore";
 import { xtremefit } from "./xtremefit";
-import { resolveos } from "./resolveos";
+import { causolve } from "./causolve";
 
 export const projects: Project[] = [
-  resolveos,
+  causolve,
   vydra,
   skillforge,
   portfolio,

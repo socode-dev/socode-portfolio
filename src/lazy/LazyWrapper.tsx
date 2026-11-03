@@ -14,7 +14,7 @@ const LazyWrapper = ({ children, loadingFallback }: Props) => {
   return (
     <ErrorBoundary
       FallbackComponent={ErrorFallback}
-      onReset={() => navigate(-1)}
+      onReset={() => navigate("/")}
     >
       <Suspense fallback={loadingFallback}>{children}</Suspense>
     </ErrorBoundary>

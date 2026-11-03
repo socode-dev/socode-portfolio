@@ -56,13 +56,9 @@ const ProjectDetail = ({project}: {project: Project}) => {
             </Link>
                             
             <div className="flex flex-wrap gap-1">
-                {project.technologies.slice(0, 4).map((t) => (
+                {project.featuredStack && project.featuredStack.map(t => (
                     <Badge key={t} variant="outline" className="h-5 px-1.5 font-mono text-[10px]">{t}</Badge>
                 ))}
-
-                {project.technologies.length > 4 &&
-                    <Badge variant="outline" className="h-5 px-1.5 font-mono text-[10px]">+{project.technologies.length - 4}</Badge>
-                }
             </div>
                             
             <div className="w-full flex justify-between items-center gap-4 border-t border-border pt-3">

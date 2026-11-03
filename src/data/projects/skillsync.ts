@@ -1,4 +1,4 @@
-import SkillSyncThumbnail from "@/assets/skillsync-thumbnail.png";
+import SkillSyncThumbnail from "@/assets/skillsync-thumbnail.webp";
 import type { Project } from "@/types/project";
 
 export const skillsync: Project = {
@@ -13,17 +13,13 @@ export const skillsync: Project = {
   thumbnail: "linear-gradient(135deg, #a78bfa 0%, #4f46e5 100%)",
   image: SkillSyncThumbnail,
 
-  technologies: [
-  "Vite",
-  "React",
-  "Tailwind CSS",
-  "React Router DOM",
-  "Zustand",
-  "Axios",
-  "PDF.js",
-  "Mammoth.js",
-  "Framer Motion",
-  ],
+  featuredStack: ["React", "Zustand", "PDF.js", "Mammoth.js"],
+
+  technologies: {
+    "Frontend & UI": ["React", "JavaScript", "Vite", "Tailwind CSS", "React Router DOM", "Framer Motion"],
+    "State & API": ["Zustand", "Axios"],
+    "Document Processing": ["PDF.js", "Mammoth.js"],
+  },
 
   status: "shipped",
 

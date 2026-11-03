@@ -1,4 +1,4 @@
-import VydraThumbnail from "@/assets/vydra-thumbnail.png";
+import VydraThumbnail from "@/assets/vydra-thumbnail.webp";
 import type { Project } from "@/types/project";
 
 export const vydra: Project = {
@@ -12,7 +12,15 @@ export const vydra: Project = {
   thumbnail: "linear-gradient(135deg, #0b56b8 0%, #20d3a2 100%)",
   image: VydraThumbnail,
 
-  technologies: ["Vite", "React", "JavaScript", "Tailwind CSS", "Zustand", "Firebase Authentication", "Firestore", "Chart.js", "Framer Motion", "Vite PWA", "Vercel Serverless Functions", "OpenAI API", "Vitest"],
+  featuredStack: ["React", "Zustand", "Chart.js", "OpenAI API"],
+
+  technologies: {
+    "Frontend & UI": ["React", "JavaScript", "Vite", "Tailwind CSS", "Chart.js", "Framer Motion", "Vite PWA"],
+    "State Management": ["Zustand"],
+    "Backend & Services": ["Firebase Authentication", "Firestore", "Vercel Serverless Functions"],
+    "AI Integration": ["OpenAI API"],
+    "Testing & CI": ["Vitest", "Github Actions"],
+  },
 
   status: "production-iterating",
 

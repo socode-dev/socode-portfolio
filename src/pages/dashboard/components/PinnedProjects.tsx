@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getPinnedProjects } from "@/data/projects/main";
@@ -28,6 +29,7 @@ const PinnedProjects = () => {
                   className="group rounded-lg border border-border bg-surface-2 p-3 transition hover:border-primary/40 hover:bg-surface-3"
                 >
                   <div className="mb-2 h-14 w-full rounded-md border border-borde" style={{ backgroundImage: p.thumbnail }} />
+
                   <div className="flex items-center justify-between gap-2">
                     <span className="truncate text-sm font-medium">{p.title}</span>
                     <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground transition group-hover:text-primary" />
@@ -35,6 +37,14 @@ const PinnedProjects = () => {
                   <p className="mt-0.5 line-clamp-2 text-[11px] text-muted-foreground">
                     {p.description}
                   </p>
+                  
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {p.featuredStack.map(t => (
+                      <Badge key={t} variant="outline" className="h-5 px-1.5 text-[10px] font-mono">
+                        {t}
+                      </Badge>
+                    ))}
+                  </div>
                 </Link>
               ))}
             </div>
