@@ -40,7 +40,7 @@ const Form = () => {
 
 
       toast.success("Email sent successfully.");
-    } catch (err) {
+    } catch {
       toast.error("Failed to send email. Please try again.");
     } finally {
       reset();
