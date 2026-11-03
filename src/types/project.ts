@@ -10,7 +10,8 @@ export interface Project {
   thumbnail: string;
   image: string;
 
-  technologies: string[];
+  technologies: Record<string, string[]>;
+  featuredStack: string[],
 
   status: ProjectStatus;
 

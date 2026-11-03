@@ -4,9 +4,9 @@ import { SEO } from "@/components/shared/SEO";
 
 const TITLE = "About";
 
-const DESCRIPTION = "About Samuel - a self-taught frontend engineer focused on React, TypeScript, and AI-powered products.";
+const DESCRIPTION = "Meet Samuel, a frontend engineer specializing in React and TypeScript, building intuitive, reliable web applications.";
 
-const KEYWORDS = ["about Samuel", "frontend engineer bio", "self-taught developer"];
+const KEYWORDS = ["about Samuel", "frontend engineer bio", "typescript frontend engineer"];
 
 const About = () => {
 
@@ -40,7 +40,7 @@ const About = () => {
           <div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-3">
             <Stat label="Role" value="Frontend Engineer" />
             <Stat label="Primary stack" value="React · TypeScript" />
-            <Stat label="Currently exploring" value="AI-powered software" />
+            <Stat label="Interests" value="Product Engineering · Applied AI" />
           </div>
         </CardContent>
       </Card>
@@ -51,20 +51,21 @@ const About = () => {
         </h2>
         <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
           <p>
-            I'm self-taught. I started coding in early 2024, no CS degree, no bootcamp. My background is in History and International Studies, which is not the path most people expect for a frontend engineer.
+            My journey into frontend engineering started in early 2024. With a background in History and International Studies, I took a self-directed path into software development, learning by building real applications and solving problems along the way.
           </p>
           <p>
-            That non-traditional route shaped how I think. I build from the user's perspective first, not from what the technology can do. Features earn their place by being useful, not by being impressive.
+            That journey shaped how I think. I build from the user's perspective first, not just from what the technology can do. Features earn their place by being useful, not by being impressive.
           </p>
           <p>
-            I care about architecture because I've felt the cost of bad decisions. I've rebuilt things. I've thrown away code. That's where opinions come from, not from blog posts, but from cleaning up after my own mistakes.
+            I've built production applications involving complex interfaces, state management, API integrations, and automated testing. I've also rebuilt features, reconsidered architectural decisions, and learned firsthand why maintainability matters beyond simply getting something to work.
           </p>
           <p>
-            Right now I'm evolving{" "}
-            <span className="font-medium text-foreground">SmartBudget</span> and while also exploring the intersection of frontend engineering and AI-powered products, not just adding AI features for the sake of it, but thinking about where AI should and shouldn't own decisions in a product.
+            Right now I'm continuing to develop{" "}
+            <span className="font-medium text-foreground">Vydra</span>
+            , a personal financial management platform, while exploring how frontend engineering and AI can work together to create better product experiences.
           </p>
           <p>
-            I learn best by shipping. I pick a real problem, ship a small version, and improve from there. That's still how I plan to keep building.
+            I learn best by shipping. I pick a real problem, build a working solution, learn from the outcome, and improve from there. That's how I intend to keep building.
           </p>
         </div>
       </section>
@@ -72,7 +73,7 @@ const About = () => {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+const Stat = ({ label, value }: { label: string; value: string }) => {
   return (
     <div>
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>

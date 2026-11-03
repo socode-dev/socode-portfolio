@@ -9,11 +9,12 @@ const StackPreview = () => {
 
     const techStack = stack.filter((current) => 
         current.title === "Frontend" ||
-        current.title === "State & UI" ||
+        current.title === "State Management & UI" ||
         current.title === "Backend / BaaS" ||
-        current.title === "Tools & Testing"
+        current.title === "Testing & Development Tools"
     )
     .map(s => ({title: s.title, skills: s.skills.slice(0, 4)}));
+
 
     return (
         <Card 

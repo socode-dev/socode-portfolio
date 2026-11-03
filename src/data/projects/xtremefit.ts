@@ -1,4 +1,4 @@
-import XtremeFitThumbnail from "@/assets/xtremefit-thumbnail.png";
+import XtremeFitThumbnail from "@/assets/xtremefit-thumbnail.webp";
 import type { Project } from "@/types/project";
 
 export const xtremefit: Project = {
@@ -13,15 +13,12 @@ export const xtremefit: Project = {
   thumbnail: "linear-gradient(135deg, #7c3aed 0%, #4338ca 100%)",
   image: XtremeFitThumbnail,
 
-  technologies: [
-  "Vite",
-  "React",
-  "Tailwind CSS",
-  "React Router DOM",
-  "Swiper.js",
-  "MUI Icons",
-  "Framer Motion",
-  ],
+  featuredStack: ["React", "Tailwind CSS", "Swiper.js", "Framer Motion"],
+
+  technologies: {
+    "Frontend": ["React", "JavaScript", "Vite", "Tailwind CSS", "React Router DOM"],
+    "UI & Interactions": ["Swiper.js", "MUI", "Framer Motion"],
+  },
 
   status: "shipped",
 

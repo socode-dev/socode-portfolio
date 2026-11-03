@@ -27,7 +27,7 @@ const Projects = () => {
       (p) =>
         p.title.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q) ||
-        p.technologies.some((t) => t.toLowerCase().includes(q)),
+        Object.values(p.technologies).flat().some(t => t.toLowerCase().includes(q))
     );
   }, [query]);
 

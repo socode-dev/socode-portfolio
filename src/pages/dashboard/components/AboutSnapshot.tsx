@@ -12,22 +12,20 @@ const AboutSnapshot = () => {
               <User className="h-3.5 w-3.5" /> About snapshot
             </div>
             <p className="text-sm leading-relaxed text-foreground/90">
-              Frontend engineer focused on React, TypeScript and product thinking. I build interfaces
-              that feel like tools, and I'm particularly interested in the boundary between
-              deterministic systems and AI.
+              Frontend engineer specializing in React and TypeScript, with a focus on building intuitive, reliable web applications. I enjoy turning complex requirements into practical products and taking ownership from implementation through deployment.
             </p>
             <ul className="space-y-1.5 text-xs text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                Currently evolving SmartBudget.
+                Building and improving Vydra, a personal financial management platform.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                Comfortable owning frontend architecture end-to-end, from UI systems to how AI gets contrained inside a product.
+                Experienced in frontend architecture, API integration, state management, and automated testing.
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                Learning in public, building, shipping, iterating.
+                Interested in usability, performance, and solving real-world problems through software.
               </li>
             </ul>
             <Button asChild size="sm" variant="ghost" className="h-7 px-2">

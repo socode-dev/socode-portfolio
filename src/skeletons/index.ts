@@ -5,5 +5,3 @@ export { default as SkillsSkeleton } from "./SkillsSkeleton";
 export { default as ContactSkeleton } from "./ContactSkeleton";
 export { default as SettingsSkeleton } from "./SettingsSkeleton";
 export { default as NotFoundSkeleton } from "./NotFoundSkeleton";
-export { default as ArticlesSkeleton } from "./ArticlesSkeleton";
-export { default as ArticleDetailLoading } from "./ArticleDetailLoading";

@@ -1,34 +1,55 @@
-import PortfolioThumbnail from "@/assets/portfolio-thumbnail.png";
+import PortfolioThumbnail from "@/assets/portfolio-thumbnail.webp";
 import type { Project } from "@/types/project";
 
 export const portfolio: Project = {
     id: "prj_portfolio",
     slug: "portfolio",
-    title: "This Portfolio",
+    
+    title: "Developer Workspace",
+    
     description:
-      "A product-style portfolio that presents who I am, the stack I work with and the projects I have built through a focused, app-like experience.",
-    thumbnail: "linear-gradient(135deg, #a78bfa 0%, #4f46e5 100%)",
+      "An interactive developer portfolio built as a dashboard-style application, featuring structured project showcases, keyboard-driven navigation, theme customization, and reusable UI components.",
+    
+      thumbnail: "linear-gradient(135deg, #a78bfa 0%, #4f46e5 100%)",
+    
     image: PortfolioThumbnail,
-    technologies: ["Vite", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
+    
+    featuredStack: [ "React", "TypeScript", "shadcn/ui", "Framer Motion"],
+    
+    technologies: {
+      "Frontend": ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      "UI & Animation": ["Framer Motion", "shadcn/ui",],
+    },
+    
     status: "shipped",
+    
     github: "https://github.com/socode-dev",
     liveDemo: "/",
-    summary:
-      "This portfolio is both a personal profile and a working example of how I think about product interfaces. Instead of using a traditional one-page resume layout, I structured it like a lightweight SaaS app: a dashboard introduces the main signal, project pages show what I have shipped, the skills section explains the tools I use, and the contact flow makes it easy to reach me. The product-style shell is a design choice, but the purpose is simple: make my experience, technical range and project work easy to explore.",
-    problem: "",
+    
+    summary: "Developer Workspace is a React and TypeScript portfolio designed around the interaction patterns of a modern SaaS application. It brings together a dashboard, project case studies, skills, articles, and settings within a consistent application shell. I built it with reusable UI components, typed project data, keyboard-driven navigation, and a theme system supporting light and dark modes. The result is an interactive experience that makes my engineering work easy to navigate and explore.",
+    
+    problem: "Traditional portfolio layouts can make it difficult to explore multiple projects and understand the engineering decisions behind them. I wanted a structured, application-style experience that presents my work clearly while demonstrating the frontend architecture and interface patterns I use when building products.",
+    
     highlights: [
-      "Dashboard, projects, articles and settings as real routes",
-      "Command palette (⌘K) for fast navigation",
-      "Light and dark themes built on Tailwind design tokens",
-      "Every project page renders from a single typed data source",
+      "Built a responsive application-style interface with dedicated routes for the dashboard, projects, and settings.",
+      "Implemented a command palette with keyboard shortcuts for quick navigation across the workspace.",
+      "Developed a consistent light and dark theme system using Tailwind CSS design tokens.",
+      "Designed reusable layouts and UI components to maintain consistent navigation and presentation across pages.",
+      "Implemented a typed, data-driven project system that renders individual project pages from structured TypeScript objects.",
     ],
+
     challenges: [
-      "Designing a layout that feels like a tool, not a landing page",
-      "Building a token system that holds up in both themes",
+      "Designing a dashboard-style interface that remains intuitive as a personal portfolio rather than becoming unnecessarily complex.",
+      "Maintaining visual consistency and accessible contrast across light and dark themes.",
+      "Structuring reusable components and typed project data to support new projects without duplicating page implementations.",
     ],
+
     lessonsLearned: [
-      "Constraints: no fake content, no fake metrics - sharpen the design",
-      "Application-feeling UIs reward boring, consistent layout primitives",
+      "Clear information hierarchy and consistent layout patterns are essential when adapting application interfaces to content-focused experiences.",
+      "A reusable component system and centralized design tokens simplify maintenance and visual consistency.",
+      "Typed, data-driven architecture makes it easier to extend an application without repeatedly modifying its presentation layer.",
+      "Real project content and verifiable achievements communicate engineering ability more effectively than decorative metrics.",
     ],
+    
     pinned: false,
   }

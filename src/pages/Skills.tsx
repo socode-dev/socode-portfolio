@@ -8,7 +8,7 @@ const TITLE = "Skills";
 
 const DESCRIPTION ="Samuel's toolkit - React, TypeScript, Tailwind, Firebase, OpenAI API, Vercel, and more.";
 
-const KEYWORDS = ["React skills", "TypeScript", "Tailwind", "Firebase", "OpenAI"];
+const KEYWORDS = stack.flatMap(s => s.skills);
 
 const Skills = () => {
   return (

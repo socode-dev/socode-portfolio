@@ -18,12 +18,12 @@ const SearchBar = ({query, setQuery, setPage}: Props) => {
                 <Input
                     value={query}
                     onChange={(e) => {
-                      setQuery(e.target.value);
-                      setPage(1);
+                        setQuery(e.target.value);
+                        setPage(1);
                     }}
                     placeholder="Search by title, technology or description…"
                     className="h-9 pl-9"
-                  />
+                />
             </div>
         </div>
     )

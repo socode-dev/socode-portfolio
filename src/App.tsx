@@ -8,8 +8,6 @@ import {
   SkillsSkeleton, 
   AboutSkeleton, 
   ContactSkeleton,
-  // ArticlesSkeleton,
-  // ArticleDetailLoading,
   SettingsSkeleton,
   NotFoundSkeleton
 } from "@/skeletons/index"
@@ -22,8 +20,6 @@ import { cn } from "./lib/utils";
 
 const Projects = lazy(() => import("@/pages/projects/Projects"));
 const ProjectDetail = lazy(() => import("@/pages/projects/ProjectDetail"));
-// const Articles = lazy(() => import("@/pages/Articles"));
-// const ArticleDetail = lazy(() => import("@/pages/ArticleDetail"));
 const About = lazy(() => import("@/pages/About"));
 const Skills = lazy(() => import("@/pages/Skills"));
 const Contact = lazy(() => import("@/pages/contact/Contact"));

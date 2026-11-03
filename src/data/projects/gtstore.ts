@@ -1,4 +1,4 @@
-import GTStoreThumbnail from "@/assets/gtstore-thumbnail.png";
+import GTStoreThumbnail from "@/assets/gtstore-thumbnail.webp";
 import type { Project } from "@/types/project";
 
 export const gtstore: Project = {
@@ -13,16 +13,13 @@ export const gtstore: Project = {
   thumbnail: "linear-gradient(135deg, #7c3aed 0%, #4338ca 100%)",
   image: GTStoreThumbnail,
 
-  technologies: [
-  "Vite",
-  "React",
-  "Tailwind CSS",
-  "React Router DOM",
-  "React Query",
-  "React Hook Form",
-  "Easy Peasy",
-  "Framer Motion",
-  ],
+  featuredStack: ["React", "React Query", "React Hook Form", "Easy Peasy"],
+
+  technologies: {
+    "Frontend & UI": [ "React", "JavaScript", "Vite", "Tailwind CSS", "React Router DOM", "Framer Motion"],
+    "State & Data": [ "React Query", "Easy Peasy"],
+    "Forms": ["React Hook Form"],
+  },
 
   status: "shipped",
 
